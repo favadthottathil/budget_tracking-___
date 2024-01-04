@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "277962436586",
+    "project_id": "dhilwise-machine-test",
+    "storage_bucket": "dhilwise-machine-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277962436586:android:623e4704c2a1e4c5800c93",
+        "android_client_info": {
+          "package_name": "in.machinetest.dhilwise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiUGuQLQjEE_-iJWnlh5hjgAoPF1ApKp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
