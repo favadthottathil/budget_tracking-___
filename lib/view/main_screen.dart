@@ -1,12 +1,14 @@
 import 'package:dhilwise/Utils/remaining_month.dart';
 import 'package:dhilwise/Utils/resources/colors.dart';
 import 'package:dhilwise/components/circle_arc.dart';
+import 'package:dhilwise/controller/auth_controller.dart';
 import 'package:dhilwise/controller/contribution_controller.dart';
 import 'package:dhilwise/controller/goal_provider.dart';
 import 'package:dhilwise/model/contribution_model.dart';
 import 'package:dhilwise/model/goals_model.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:provider/provider.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
@@ -17,12 +19,13 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authController = context.watch<AuthController>();
     return Scaffold(
       backgroundColor: AppColors.purple,
       body: SafeArea(
         child: StreamBuilder<GoalsModel>(
             stream: _controller.getGoalDetailsStream('2Q0e21Ologyt7aVhowh9'),
-            builder: (context, snapshot) {       
+            builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(
                   child: CircularProgressIndicator(
@@ -46,7 +49,22 @@ class MainScreen extends StatelessWidget {
               return SingleChildScrollView(
                 child: Column(
                   children: [
-                    30.height,
+                    SizedBox(
+                      height: 30,
+                      width: double.infinity,
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: IconButton(
+                          onPressed: () {
+                            authController.logOut();
+                          },
+                          icon: const Icon(
+                            Icons.logout,
+                            color: AppColors.blackColor,
+                          ),
+                        ),
+                      ),
+                    ),
                     Align(
                       alignment: Alignment.center,
                       child: Text(
@@ -186,7 +204,3 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-

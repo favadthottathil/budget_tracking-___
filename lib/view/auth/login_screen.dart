@@ -26,14 +26,10 @@ class _LoginState extends State<Login> {
   void signIn(AuthController authController, String email, String pass) async {
     final msg = await authController.signIn(email, pass);
 
-    authController.setLoading = true;
-
     if (msg == '') {
       authController.setLoading = false;
       return;
     }
-
-    // Utils.snackBar('Login Failed', msg);
   }
 
   String? validateEmail(String? email) {
@@ -95,9 +91,6 @@ class _LoginState extends State<Login> {
                   30.height,
                   ElevatedButton(
                     onPressed: () {
-                      // set Loading True
-                      // authController.setLoading = true;
-
                       signIn(authController, emailController.text.trim(), passwordController.text.trim());
                     },
                     style: AppButtonStyle.buttonStyle1,

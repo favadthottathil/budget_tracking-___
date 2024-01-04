@@ -1,4 +1,3 @@
-
 import 'package:dhilwise/Utils/resources/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +5,7 @@ class AppTextStyle {
   static const textStyle1 = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.bold,
-    color: AppColors.blackColor,
+    color: AppColors.whiteColor,
   );
   static const textStyle8 = TextStyle(
     fontSize: 18,
